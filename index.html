@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Resume Builder</h1>
+      <form id="resume-form">
+        <label for="name">Name:</label>
+        <input type="text" placeholder="Enter name" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter email" id="email" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" placeholder="Enter phone no." id="phone" required />
+
+        <label for="linkedin">LinkedIn Profile:</label>
+        <input type="url" placeholder="Enter URL" id="linkedin" />
+
+        <label for="github">GitHub Profile:</label>
+        <input type="url" placeholder="Enter GitHub URL" id="github" />
+
+        <label for="experience">Work Experience:</label>
+        <textarea id="experience" placeholder="Describe your job responsibilities" rows="4"></textarea>
+
+        <label for="education">Education:</label>
+        <textarea id="education" placeholder="Enter your education" rows="4"></textarea>
+
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" accept="image/*" />
+
+        <button type="button" onclick="generateResume()">Generate Resume</button>
+      </form>
+
+      <div class="resume-output" id="resume-output">
+        <!-- <h2>Generated Resume</h2> -->
+        <div class="center-content">
+          <img id="output-photo" alt="Uploaded photo" style="display: none" />
+          <p><strong></strong> <span id="output-name"></span></p>
+        </div>
+        <p><strong>Email:</strong> <span id="output-email"></span></p>
+        <p><strong>Phone:</strong> <span id="output-phone"></span></p>
+        <p><strong>LinkedIn:</strong> <span id="output-linkedin"></span></p>
+        <p><strong>GitHub:</strong> <span id="output-github"></span></p>
+        <p><strong>Experience:</strong> <span id="output-experience"></span></p>
+        <p><strong>Education:</strong> <span id="output-education"></span></p>
+        <button type="button" onclick="downloadResume()">Download Resume</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
